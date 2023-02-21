@@ -6,7 +6,7 @@ import ListStudents from "../components/ListStudents"
 const Home=()=>{
     const [students,setStudents]=useState(null)
     useEffect(()=> {
-        axios.get("https://localhost::3004/students").then((response)=> {setStudents(response.data)}).catch((error)=>{})
+        axios.get("http://localhost:3004/students").then((response)=> {setStudents(response.data)}).catch((error)=>{})
     },[])
     if(students==null){return null}
     return(
@@ -15,7 +15,7 @@ const Home=()=>{
             <div className="container mt-5 d-flex justify-content-end">
                 <Link to={"/add-student"} className="btn btn-primary"> Add New Student </Link>
             </div>
-            <ListStudents stundents={students}/>
+            <ListStudents students={students}/>
             
         </div>
     )

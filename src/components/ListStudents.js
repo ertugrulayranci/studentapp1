@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListStudents=({props})=>{
+const ListStudents=(props)=>{
     const { students } = props;
     
     return(
